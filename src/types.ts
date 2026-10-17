@@ -1,3 +1,4 @@
+
 export type Opportunity = {
   id: string;
   title: string;
@@ -15,6 +16,8 @@ export type Opportunity = {
   sourceUrl?: string;
   officialUrl?: string;
   contactEmail?: string;
+  checkedAt?: string;
+  ageEligibility?: string;
   isDemo?: boolean;
   matchTerms?: string[];
 };
