@@ -1,5 +1,3 @@
-import React from "react";
-
 /** Animated status text for the live opportunity research request. */
 export default function Loader() {
   const letters = ["L", "O", "A", "D", "I", "N", "G"];

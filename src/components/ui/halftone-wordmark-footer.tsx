@@ -9,15 +9,18 @@ export interface HalftonePalette {
   warm: string;
 }
 
+
 export interface FooterLink {
   label: string;
   href?: string;
+  onClick?: () => void;
 }
 
 export interface FooterColumn {
   title: string;
   links: FooterLink[];
 }
+
 
 export interface HalftoneWordmarkFooterProps {
   wordmark?: string;

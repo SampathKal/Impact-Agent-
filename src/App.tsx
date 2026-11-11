@@ -456,7 +456,6 @@ export default function App() {
           menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
         aria-hidden={!menuOpen}
-        inert={!menuOpen}
       >
         <nav aria-label="Main navigation" className="flex flex-col items-center gap-6 md:gap-8">
           {navItems.map((item, index) => (
@@ -1031,9 +1030,17 @@ export default function App() {
 
                   <a
                     className="pill-outline"
-                    href={`mailto:${encodeURIComponent(selected?.contactEmail || "")}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`}
+                    href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+                      (selected?.contactEmail || "").trim()
+                    )}&su=${encodeURIComponent(
+                      emailSubject.replace(/[—–]/g, "-")
+                    )}&body=${encodeURIComponent(
+                      emailBody.replace(/[—–]/g, "-")
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    Open in email app <Mail size={15} aria-hidden="true" />
+                    Open email draft <Mail size={15} aria-hidden="true" />
                   </a>
                 </div>
 
